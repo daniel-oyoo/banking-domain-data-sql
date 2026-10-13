@@ -37,26 +37,3 @@ LIMIT 10;
 the two tables are merged
 doesnt need on becuase it merges everything
 */
-
-
-
-SELECT county c FROM
-(
-SELECT * FROM branches b
-JOIN customers c
-LIMIT 10
-) AS  pre
-WHERE pre.last_name = 'Oyoo';
-
-/*
-duplicate country--how
-*/
-
-
-SELECT county c FROM
-(
-SELECT * FROM branches b
-UNION customers c
-LIMIT 10
-) AS  pre
-WHERE pre.last_name = 'Oyoo';
